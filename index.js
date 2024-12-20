@@ -25,6 +25,23 @@ const pool = new Pool({
   database: "company_manager",
 });
 
+// Initialize the database schema and seed data
+async function initializeDatabase() {
+  try {
+    const schema = fs.readFileSync(path.join(__dirname, "db/schema.sql"), "utf8");
+    const seeds = fs.readFileSync(path.join(__dirname, "db/seeds.sql"), "utf8");
+
+    await pool.query(schema);
+    console.log("Database schema has been initialized.");
+
+    await pool.query(seeds);
+    console.log("Database has been seeded with initial data.");
+  } catch (err) {
+    console.error("Error initializing the database:", err);
+    process.exit(1);
+  }
+}
+
 // Main menu function to navigate the application
 async function mainMenu() {
   const { action } = await inquirer.prompt({

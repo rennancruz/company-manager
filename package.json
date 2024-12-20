@@ -6,8 +6,8 @@
     "author": "",
     "license": "",
     "dependencies": {
-      "asciiart-logo": "^0.2.7",
-      "inquirer": "^8.2.4",
-      "pg": "^8.13.1"
+        "asciiart-logo": "^0.2.7",
+        "inquirer": "^8.2.4",
+        "pg": "^8.13.1"
     }
-  }
+}

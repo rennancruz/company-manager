@@ -1,20 +1,28 @@
--- Seed the department table
-INSERT INTO department (name) VALUES
-    ('Sales'),
-    ('Inventory'),
-    ('Technician Area'),
-    ('Cleaners');
+-- Insert initial divisions into the division table
+INSERT INTO division (division_name) VALUES
+('Operations'),
+('Finance'),
+('IT Support'),
+('HR'),
+('Marketing'),
+('Sales');
 
--- Seed the role table
-INSERT INTO role (title, salary, department_id) VALUES
-    ('Salesperson', 4000, 1),
-    ('Inventory Manager', 4500, 2),
-    ('Technician', 4870, 3),
-    ('Janitor', 2000, 4);
+--Insert initial positions into the position table
+INSERT INTO position (name, pay, division_id) VALUES
+('Operations Manager', 5500, 1),
+('Accountant', 4800, 2),
+('Support Specialist', 4000, 3),
+('HR Coordinator', 4200, 4),
+('Marketing Lead', 5000, 5),
+('Sales Representative', 4500, 6);
 
--- Seed the employee table
-INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES
-    ('Alexander', 'Morales', 1, NULL),
-    ('Javier', 'Lopez', 2, NULL),
-    ('Henry', 'Alias', 3, NULL),
-    ('Iris', 'Gomez', 4, NULL);
+-- Insert initial staff members into the staff table
+INSERT INTO staff (first_name, last_name, position_id, supervisor_id) VALUES
+('Alice', 'Johnson', 1, NULL),
+('Bob', 'Smith', 2, 1),
+('Charlie', 'Brown', 3, 1),
+('Diana', 'Prince', 4, 1),
+('Emma', 'Davis', 5, NULL),
+('Frank', 'Wilson', 6, NULL),
+('Grace', 'Taylor', 6, 1),
+('Hank', 'Evans', 2, 2);

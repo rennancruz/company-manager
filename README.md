@@ -22,12 +22,12 @@ The **Company Manager** application is a command-line tool that allows users to 
     git clone <repository-url>
     cd company-manager
 ```
-1. Install the dependencies:
+2. Install the dependencies:
 ```bash
     npm install
 ```
-1. Ensure PostgreSQL is running on your machine.
-1. Update the database credentials in index.js:
+3. Ensure PostgreSQL is running on your machine.
+4. Update the database credentials in index.js:
    ```javascript
     const pool = new Pool({
         user: "postgres",
@@ -42,7 +42,7 @@ The **Company Manager** application is a command-line tool that allows users to 
 ```bash
     node index.js
 ```
-1. Follow the prompts to interact with the application.
+2. Follow the prompts to interact with the application.
 
 ## Database Schema
 The database consists of three tables:

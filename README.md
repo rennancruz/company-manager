@@ -3,6 +3,10 @@
 ## Description
 The **Company Manager** application is a command-line tool that allows users to manage a company's organizational structure efficiently. It enables the management of divisions, positions, and staff members with ease, providing a user-friendly interface to interact with the database.
 
+## Demo
+https://github.com/user-attachments/assets/011ffc83-2f82-494b-924f-f8fc64b4a866
+
+
 ## Features
 - View all staff, positions, and divisions.
 - Add new staff members, positions, and divisions.

@@ -1,32 +1,27 @@
--- Create the database
-DROP DATABASE IF EXISTS employee_tracker;
-CREATE DATABASE employee_tracker;
+DROP DATABASE IF EXISTS company_manager;
+CREATE DATABASE company_manager;
 
--- Connect to the newly created database
-\c employee_tracker;
+\c company_manager;
 
--- Create the department table
-CREATE TABLE department (
+CREATE TABLE division (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(30) UNIQUE NOT NULL
+    division_name VARCHAR(50) UNIQUE NOT NULL
 );
 
--- Create the role table
-CREATE TABLE role (
+CREATE TABLE position (
     id SERIAL PRIMARY KEY,
-    title VARCHAR(30) UNIQUE NOT NULL,
-    salary DECIMAL NOT NULL,
-    department_id INTEGER,
-    FOREIGN KEY (department_id) REFERENCES department(id)
+    name VARCHAR(50) UNIQUE NOT NULL,
+    pay DECIMAL NOT NULL,
+    division_id INTEGER NOT NULL,
+    FOREIGN KEY (division_id) REFERENCES division(id)
 );
 
--- Create the employee table
-CREATE TABLE employee (
+CREATE TABLE staff (
     id SERIAL PRIMARY KEY,
-    first_name VARCHAR(30) NOT NULL,
-    last_name VARCHAR(30) NOT NULL,
-    role_id INTEGER NOT NULL,
-    manager_id INTEGER,
-    FOREIGN KEY (role_id) REFERENCES role(id),
-    FOREIGN KEY (manager_id) REFERENCES employee(id)
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    position_id INTEGER NOT NULL,
+    supervisor_id INTEGER,
+    FOREIGN KEY (position_id) REFERENCES position(id),
+    FOREIGN KEY (supervisor_id) REFERENCES staff(id)
 );

@@ -30,6 +30,9 @@ https://github.com/user-attachments/assets/011ffc83-2f82-494b-924f-f8fc64b4a866
 ```bash
     npm install
 ```
+```bash
+    npm i inquirer@8.2.4
+```
 3. Ensure PostgreSQL is running on your machine.
 4. Update the database credentials in index.js:
    ```javascript
